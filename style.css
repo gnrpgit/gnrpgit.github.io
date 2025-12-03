@@ -1,0 +1,170 @@
+/* --- 1. Custom Properties (Variables) --- */
+:root {
+/* Color Palette */
+--primary-color: #e74c3c; /* Main Accent Red */
+--primary-hover: #c0392b; /* Darker Red */
+--secondary-color: #34495e; /* Dark Blue/Gray for structure/footer */
+--text-on-light: #333333; /* Dark text on white backgrounds */
+--text-on-dark: #ecf0f1; /* Light text on dark backgrounds */
+--background-section: #ffffff; /* Content background color */
+
+/* Layout Properties */
+--max-content-width: 1200px;
+--border-radius-base: 8px;
+
+/* Font */
+--font-stack: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* --- 2. Global Styles & HTML Reset --- */
+*, *::before, *::after {
+box-sizing: border-box; /* Crucial for better padding/border handling */
+}
+
+html {
+scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body {
+font-family: var(--font-stack);
+margin: 0;
+padding: 0;
+line-height: 1.65; /* Improved line height for readability */
+font-size: 16px;
+color: var(--text-on-dark); /* Default text color is light */
+-webkit-font-smoothing: antialiased;
+
+/* --- CUSTOM BACKGROUND IMAGE & OVERLAY --- */
+background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+url('bg.jpg'); /* <<< CHECK FILENAME */
+
+background-size: cover;
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-position: center center;
+background-color: var(--secondary-color);
+}
+
+/* --- 3. Typography and Element Styling --- */
+h1 {
+font-size: 3em; /* Bigger, bolder heading */
+color: var(--text-on-dark);
+margin: 0 0 10px 0;
+font-weight: 700;
+letter-spacing: 1px;
+}
+
+h2 {
+font-size: 2em;
+color: var(--primary-color); /* Headings in sections use primary color */
+border-left: 5px solid var(--secondary-color); /* Left border accent */
+padding-left: 15px;
+margin-top: 0;
+margin-bottom: 20px;
+}
+
+a {
+color: var(--primary-color);
+text-decoration: none;
+transition: color 0.3s ease;
+}
+
+a:hover {
+color: var(--primary-hover);
+text-decoration: underline;
+}
+
+/* --- 4. Layout Styles (Header, Main, Footer) --- */
+header {
+background-color: var(--primary-color);
+color: var(--text-on-dark);
+padding: 40px 0 0 0; /* More top padding */
+text-align: center;
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+}
+
+main {
+padding: 30px;
+max-width: var(--max-content-width);
+margin: 40px auto; /* Increased margin */
+}
+
+.content-section {
+background-color: var(--background-section);
+color: var(--text-on-light); /* Dark text on light background */
+padding: 40px;
+margin-bottom: 35px;
+border-radius: var(--border-radius-base);
+/* Advanced shadow for card effect (lighter inner, stronger outer) */
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.05);
+transition: transform 0.3s ease;
+}
+
+.content-section:hover {
+transform: translateY(-5px); /* Lift effect on hover */
+box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15), 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+background-color: var(--secondary-color);
+color: var(--text-on-dark);
+text-align: center;
+padding: 20px 0;
+position: relative;
+width: 100%;
+margin-top: 50px;
+font-size: 0.9em;
+}
+
+/* --- 5. Navigation Bar (main-nav) Styles --- */
+.main-nav {
+background-color: rgba(0, 0, 0, 0.25); /* Slightly darker/less transparent nav bar */
+margin-top: 20px;
+}
+
+.main-nav ul {
+list-style-type: none;
+padding: 0;
+margin: 0;
+text-align: center;
+}
+
+.main-nav li {
+display: inline-block;
+}
+
+.main-nav a {
+color: var(--text-on-dark);
+text-decoration: none;
+padding: 18px 25px; /* Even larger hit area */
+display: block;
+font-weight: 500;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-nav a:hover {
+background-color: var(--background-section);
+color: var(--primary-color);
+}
+
+/* --- 6. Button Styles --- */
+button {
+background-color: var(--primary-color);
+color: var(--text-on-dark);
+padding: 15px 30px; /* Bigger buttons */
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 1.1em;
+font-weight: bold;
+letter-spacing: 1px;
+text-transform: uppercase; /* All caps for impact */
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+background-color: var(--primary-hover);
+transform: translateY(-2px); /* Slight hover lift */
+box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
