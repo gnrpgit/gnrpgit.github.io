@@ -1,4 +1,4 @@
-/* GNARPTECH V8 - MODERN GLASS THEME */
+/* GNARPTECH V9 - MASTER GLASS BUILD */
 
 * {
     box-sizing: border-box;
@@ -7,114 +7,126 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     color: #ffffff;
-    background-color: #0a0a0a;
-    line-height: 1.6;
+    background-color: #0a0a0a; /* Fallback if image fails */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* --- WALLPAPER ENGINE --- */
-.wallpaper {
+/* --- THE WALLPAPER --- */
+.bg, .wallpaper {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
-    /* This is a high-quality tech wallpaper, you can swap the URL */
+    /* Using the raw link to your bg.png */
     background-image: url('https://raw.githubusercontent.com/gnrpgit/web/main/bg.png');
     background-size: cover;
     background-position: center;
-    filter: brightness(0.4);
+    background-attachment: fixed;
+    filter: brightness(0.4) contrast(1.1); /* Keeps text readable */
 }
 
+/* --- THE CONTAINER --- */
 .container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 40px 20px;
+    width: 90%;
+    max-width: 480px;
+    padding: 30px 0;
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    min-height: 100vh;
+    gap: 20px;
 }
 
-/* --- GLOWING HEADER --- */
+/* --- THE HEADER --- */
 header {
-    background: rgba(173, 255, 47, 0.1);
-    border: 1px solid rgba(173, 255, 47, 0.4);
-    padding: 30px;
+    background: #adff2f; /* Gnarpy Green */
+    color: #000000;
+    padding: 35px 20px;
     border-radius: 24px;
     text-align: center;
-    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(173, 255, 47, 0.4);
 }
 
-h1 {
-    color: #adff2f;
-    font-size: 2.5rem;
-    letter-spacing: -1px;
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    letter-spacing: -1.5px;
     text-transform: lowercase;
-    text-shadow: 0 0 15px rgba(173, 255, 47, 0.5);
 }
 
-/* --- GLASS CARDS --- */
-.glass-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
+/* --- THE GLASS CARDS --- */
+.card, .glass-card {
+    background: rgba(255, 255, 255, 0.08); /* Transparent White */
+    backdrop-filter: blur(12px); /* The Glass Blur */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     padding: 25px;
     border-radius: 24px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 h2 {
-    color: #ffa500; /* Subtle orange for titles */
-    margin-bottom: 15px;
-    font-size: 1.4rem;
-    font-weight: 600;
+    color: #adff2f;
+    margin-bottom: 12px;
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
 p {
-    opacity: 0.9;
+    font-size: 1.1rem;
+    line-height: 1.6;
     margin-bottom: 10px;
+    opacity: 0.95;
 }
 
-/* --- MODERN BUTTONS --- */
-.links-grid {
-    display: grid;
-    grid-template-columns: 1fr;
+/* --- BUTTONS & LINKS --- */
+.links, .links-grid {
+    display: flex;
+    flex-direction: column;
     gap: 12px;
     margin-top: 15px;
 }
 
-.btn {
+.btn, a {
     background: #ffffff;
     color: #000000;
     text-decoration: none;
-    padding: 14px;
-    border-radius: 14px;
+    padding: 16px;
+    border-radius: 16px;
     text-align: center;
-    font-weight: 700;
+    font-weight: 800;
+    font-size: 1rem;
     transition: all 0.2s ease;
+    display: block;
 }
 
-.btn:hover {
+/* This targets the Socials specifically */
+.card a:hover, .btn:hover {
     background: #adff2f;
     transform: translateY(-2px);
 }
 
-.discord-footer {
-    margin-top: 20px;
+.discord, .discord-tag, .discord-footer {
     text-align: center;
-    font-size: 0.9rem;
+    margin-top: 15px;
+    font-size: 0.95rem;
+    color: #adff2f;
+    font-weight: bold;
     padding: 10px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0,0,0,0.2);
     border-radius: 12px;
 }
 
+/* --- FOOTER --- */
 footer {
     text-align: center;
     margin-top: auto;
-    opacity: 0.5;
+    padding: 30px;
+    opacity: 0.4;
     font-size: 0.8rem;
 }
-
