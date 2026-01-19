@@ -127,3 +127,9 @@ footer {
     opacity: 0.4;
     font-size: 0.8rem;
 }
+
+a:active {
+    background: #adff2f !important;
+    box-shadow: 0 0 20px #adff2f !important;
+    transform: scale(0.95);
+}
